@@ -1,49 +1,43 @@
 import React from "react";
-import { Button, Stack } from "@mui/material";
+import { Button } from "@mui/material";
+import "./style.css";
+import img from "../../images/headerImg.png";
 
 const Header = () => {
 	return (
-		<div style={{ display: "flex", justifyContent: "space-evenly" }}>
-			<div>
+		<div className='header-container'>
+			<div className='header-cont'>
 				<h2>Welcome to MediCare+ Clinic</h2>
-				<h1>Best Specialists</h1>
-				<p>
+				<h1 className='best-name'>Best Specialists</h1>
+				<p className='header-p'>
 					We are on the leading edge of cancer care. Providing the full
 					continuum of cancer treatments and supportive care services in a
 					single convenient location.
 				</p>
-				<div style={{"display" : "flex"}}>
-        <Button
-					variant='contained'
-					sx={{ my: 2, px: 2, color: "white", display: "block" }}
-					style={{
-						color: "white",
-						background: "#0073FF",
-						borderRadius: "30px",
-					}}>
-					Contact
-				</Button>
-				<Button
-					variant='contained'
-					sx={{ my: 2, px: 2, color: "white", display: "block" }}
-					style={{
-						color: "white",
-						background: "#0073FF",
-						borderRadius: "30px",
-					}}>
-					Contact
-				</Button>
-        </div>
+				<div className="header-btns">
+					<Button
+						variant='contained'
+						sx={{ my: 2, px: 2, color: "white", display: "block" }}
+						style={{
+							color: "white",
+							background: "#0073FF",
+						}}>
+						Make an appointment
+					</Button>
+
+					<Button
+						variant='contained'
+						sx={{ my: 2, px: 2, color: "white", display: "block" }}
+						style={{
+							color: "#0073FF",
+							background: "white",
+						}}>
+						Departments
+					</Button>
+				</div>
 			</div>
 			<div>
-				<svg
-					width='374'
-					height='472'
-					viewBox='0 0 574 672'
-					fill='none'
-					xmlns='http://www.w3.org/2000/svg'>
-					<rect width='574' height='672' rx='32' fill='#EBEEFF' />
-				</svg>
+				<img className='header-box' src={img} />
 			</div>
 		</div>
 	);

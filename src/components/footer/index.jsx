@@ -16,6 +16,7 @@ import Stack from "@mui/material/Stack"
 import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
 import Twitter from '@mui/icons-material/Twitter';
 import Instagram from '@mui/icons-material/Instagram';
+import "./style.css"
 const pages = ["Home", "About", "Services", "News"];
 
 const FooterTop = () => {
@@ -26,7 +27,7 @@ const FooterTop = () => {
 			color='transparent'
 			style={{ boxShadow: "none" }}>
 			<Container maxWidth='xl'>
-				<Toolbar disableGutters style={{ justifyContent: "space-between", padding: "1rem 5rem" }}>
+				<Toolbar disableGutters className="footer-menu">
 					<Typography
 						variant='h6'
 						noWrap
@@ -59,11 +60,7 @@ const FooterTop = () => {
 					</Typography>
 					
 					<Box
-						sx={{
-							flexGrow: 0,
-							display: "flex",
-							justifyContent: { md: "end" },
-						}}>
+						className="footer-nav">
 						{pages.map(page => (
 							<Button
 								key={page}

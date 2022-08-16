@@ -1,0 +1,64 @@
+.spe-hold {
+	padding: 0 3rem 2rem 3rem;
+	color: #003b79;
+}
+
+.spe-h1 {
+	font-size: 4rem;
+}
+
+.spe-p {
+	font-size: 1.3rem;
+	padding: 1rem 2rem 2rem 0rem;
+}
+.empty-space {
+	width: 18em;
+	height: 17rem;
+	background-color: #aed3e2;
+}
+.spe-cards-hold {
+	display: grid;
+	grid-template-columns: repeat(4, 19rem);
+	justify-content: center;
+}
+
+.speciality-card {
+	margin: 2rem 2rem 2rem 2rem;
+	border-radius: 20px;
+	color: #003b79;
+	box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+@media (max-width: 1200px) {
+	.spe-cards-hold {
+		grid-template-columns: repeat(3, 19rem);
+	}
+	.spe-h1 {
+		font-size: 3.7rem;
+	}
+}
+@media (max-width: 900px) {
+	.spe-cards-hold {
+		grid-template-columns: repeat(2, 24rem);
+	}
+	.empty-space {
+		width: 23em;
+		height: 22rem;
+		background-color: #aed3e2;
+	}
+}
+@media (max-width: 740px) {
+	.spe-hold {
+		padding: 0 2rem 2rem 2rem;
+	}
+	.spe-cards-hold {
+		grid-template-columns: repeat(1, 23rem);
+		padding: 0 2rem 2rem 2rem;
+	}
+	.spe-h1 {
+		font-size: 2.7rem;
+		text-align: left;
+	}
+	.spe-p {
+		text-align: left;
+	}
+}

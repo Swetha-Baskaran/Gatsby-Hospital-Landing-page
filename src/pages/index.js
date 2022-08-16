@@ -1,5 +1,4 @@
-import React , { useEffect } from "react"
-import API_Func from "../api.js"
+import React from "react"
 import Navbar from "../components/navbar/index.jsx"
 import Header from "../components/header/index.jsx"
 import ServiceComponent from "../components/serviceComponent/index.jsx"
@@ -8,13 +7,11 @@ import Speciality from "../components/specialist/index.jsx"
 import CustomerReview from "../components/customerReview/index.jsx"
 import NewsLetter from "../components/newsletter/index.jsx"
 import Footer from "../components/footer/index.jsx"
+import "./style.css"
 
 const IndexPage = () => {
-  useEffect(() => {
-    API_Func()
-  }, [])
   return (
-    <div>
+    <div  className="app">
        <Navbar />
        <Header />
        <ServiceComponent />

@@ -1,0 +1,17 @@
+.footer-nav{
+    display: flex;
+    justify-content: end;
+}
+.footer-menu{
+    justify-content: space-between;
+    padding: 1rem 5rem;
+}
+
+@media (max-width: 700px){
+   .footer-nav{
+    display: none;
+   }
+   .footer-menu{
+     justify-content: center;
+   }
+}

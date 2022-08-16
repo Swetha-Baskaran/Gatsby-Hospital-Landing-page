@@ -1,39 +1,56 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { CardActionArea } from "@mui/material";
+import { Avatar, CardActionArea } from "@mui/material";
+import "./style.css"
+import axios from "axios";
 
-function ActionAreaCard() {
+
+
+function ActionAreaCard({ value }) {
 	return (
-		<Card sx={{ maxWidth: 545 }}>
-			<CardActionArea>
+		<Card className="card-size">
 				<CardContent>
-					<Typography gutterBottom variant='h5' component='div'>
-						Dr. Awaatif Al
-					</Typography>
-					<Typography variant='body2' color='text.secondary'>
-						Dental care
-					</Typography>
+					<p className="review-msg">{value.Reviews}</p>
+					<div className="card-flex">
+						<div className="avatar-review">
+					    	<Avatar className="avatar-img" />
+						</div>
+						<div>
+							<h3>{value.Name}</h3>
+							<p>{value.Company}</p>
+						</div>
+					</div>
 				</CardContent>
-			</CardActionArea>
 		</Card>
 	);
 }
 
 const CustomerReview = () => {
-  return (
-    <div>
-			<Typography>What Our Customers Say</Typography>
-			
-			<div style={{ display: "flex", justifyContent: "space-evenly" }}>
-				{[1, 2].map(() => {
-					return <ActionAreaCard />;
-				})}
-			</div>
-		</div>
-  )
-}
+	let [state, setState] = useState([]);
 
-export default CustomerReview
+	useEffect(()=>{
+		axios.get('https://admin.tomedes.com/api/v1/get-reviews?page=1')
+           .then((res) => {
+			   setState(res.data.data)
+			   console.log(res.data.data)
+           });
+	}, [])
+	return (
+		<div>
+			<h2 className="cust-head">What Our Customers Say...</h2>
+				<div className="cust-cards">
+				{
+					state.length !== 0 &&
+					[0, 1].map((e)=>{
+						return <ActionAreaCard value={state[e]} />
+					})
+				}
+			    </div>
+		</div>
+	);
+};
+
+export default CustomerReview;
